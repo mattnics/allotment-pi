@@ -4,5 +4,6 @@ from picamera import PiCamera
 from time import sleep
 
 camera = PiCamera()
-camera.start_preview()
-camera.capture('/images/img{timestamp:%H-%M-%S-%f}.jpg')
+timestr = time.strftime("%Y%m%d-%H%M%S")
+camera.capture(f'images/img{timestr}.jpg')
+
